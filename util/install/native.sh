@@ -107,6 +107,12 @@ sudo pip install --upgrade setuptools==44.1.0
 sudo -H pip install --upgrade virtualenv==16.7.10
 
 ##
+## Modifications for eduplusca
+##
+CONFIGURATION_VERSION="eduplusca-ironwood.master"
+OPENEDX_RELEASE="eduplusca-ironwood.master"
+
+##
 ## Overridable version variables in the playbooks. Each can be overridden
 ## individually, or with $OPENEDX_RELEASE.
 ##
@@ -144,13 +150,16 @@ fi
 
 EXTRA_VARS="-e@$(pwd)/config.yml $EXTRA_VARS"
 
-CONFIGURATION_VERSION=${CONFIGURATION_VERSION-$OPENEDX_RELEASE}
+#####CONFIGURATION_VERSION=${CONFIGURATION_VERSION-$OPENEDX_RELEASE}
+CONFIGURATION_VERSION="eduplusca-ironwood.master"
+OPENEDX_RELEASE="eduplusca-ironwood.master"
 
 ##
 ## Clone the configuration repository and run Ansible
 ##
 cd /var/tmp
-git clone https://github.com/edx/configuration
+#####git clone https://github.com/edx/configuration
+git clone https://github.com/eduplusca/configuration
 cd configuration
 git checkout $CONFIGURATION_VERSION
 git pull
@@ -164,7 +173,8 @@ sudo -H pip install -r requirements.txt
 ##
 ## Run the openedx_native.yml playbook in the configuration/playbooks directory
 ##
-cd /var/tmp/configuration/playbooks && sudo -E ansible-playbook -c local ./openedx_native.yml -i "localhost," $EXTRA_VARS "$@"
+#####cd /var/tmp/configuration/playbooks && sudo -E ansible-playbook -c local ./openedx_native.yml -i "localhost," $EXTRA_VARS "$@"
+cd /var/tmp/configuration/playbooks && sudo -E ansible-playbook -vvv -c local ./openedx_native.yml -i "localhost," $EXTRA_VARS "$@"
 ansible_status=$?
 
 if [[ $ansible_status -ne 0 ]]; then
