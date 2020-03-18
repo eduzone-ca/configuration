@@ -19,8 +19,36 @@
     EDXAPP_LOGIN_REDIRECT_WHITELIST: [ "{{ EDXAPP_CMS_BASE }}" ]
     EDXAPP_LMS_BASE_SCHEME: http
     EDXAPP_LMS_NGINX_PORT: '80'
-    EDX_PLATFORM_VERSION: 'master'
-    edx_platform_version: "{{ EDX_PLATFORM_VERSION }}"
+
+    ##### Modifications for eduplusca 20200317
+    #####
+    edx_platform_version: 'master'
+
+    repo_eduplusca: "eduplusca"
+    version_eduplusca: "eduplusca-ironwood.master"
+
+    CERTS_REPO: 'https://github.com/{{ repo_eduplusca }}/edx-certificates.git'
+    certs_version: "{{ version_eduplusca }}"
+    edx_ansible_source_repo: 'https://github.com/{{ repo_eduplusca }}/configuration.git'
+    configuration_version: "{{ version_eduplusca }}"
+    edx_platform_repo: 'https://github.com/{{ repo_eduplusca }}/edx-platform.git'
+    edx_platform_version: "{{ version_eduplusca }}"
+    forum_source_repo: 'https://github.com/{{ repo_eduplusca }}/cs_comments_service.git'
+    forum_version: "{{ version_eduplusca }}"
+    NOTIFIER_SOURCE_REPO: 'https://github.com/{{ repo_eduplusca }}/notifier.git'
+    NOTIFIER_VERSION: "{{ version_eduplusca }}"
+    xqueue_source_repo: 'https://github.com/{{ repo_eduplusca }}/xqueue.git'
+    XQUEUE_VERSION: "{{ version_eduplusca }}"
+    #####ECOMMERCE_VERSION: "{{ version_eduplusca }}"
+    #####ECOMMERCE_WORKER_VERSION: "{{ version_eduplusca }}"
+    DISCOVERY_VERSION: "{{ version_eduplusca }}"
+    demo_version: "{{ version_eduplusca }}"
+    #####INSIGHTS_VERSION: "{{ version_eduplusca }}"
+    #####ANALYTICS_API_VERSION: "{{ version_eduplusca }}"
+    #####THEMES_VERSION: "{{ version_eduplusca }}"
+    #####
+    ##### Modifications for eduplusca 20200317
+
     # Set to false if deployed behind another proxy/load balancer.
     NGINX_SET_X_FORWARDED_HEADERS: True
     DISCOVERY_URL_ROOT: 'http://localhost:{{ DISCOVERY_NGINX_PORT }}'
@@ -68,15 +96,23 @@
     - edxapp
     - role: blockstore
       when: SANDBOX_ENABLE_BLOCKSTORE
-    - role: ecommerce
-      when: SANDBOX_ENABLE_ECOMMERCE
-    - role: ecomworker
-      ECOMMERCE_WORKER_BROKER_HOST: 127.0.0.1
-      when: SANDBOX_ENABLE_ECOMMERCE
-    - role: analytics_api
-      when: SANDBOX_ENABLE_ANALYTICS_API
-    - role: insights
-      when: SANDBOX_ENABLE_INSIGHTS
+    ##### Modifications for eduplusca 20200317
+    ##### not installing ecommerce, ecomworker, analytics_api
+    ##### not installing insights
+    #####
+    #####- role: ecommerce
+    #####  when: SANDBOX_ENABLE_ECOMMERCE
+    #####- role: ecomworker
+    #####  ECOMMERCE_WORKER_BROKER_HOST: 127.0.0.1
+    #####  when: SANDBOX_ENABLE_ECOMMERCE
+    #####- role: analytics_api
+    #####  when: SANDBOX_ENABLE_ANALYTICS_API
+    #####- role: insights
+    #####  when: SANDBOX_ENABLE_INSIGHTS
+    #####
+    ##### not installing insights
+    ##### not installing ecommerce, ecomworker, analytics_api
+    ##### Modifications for eduplusca 20200317
     - role: edx_notes_api
       when: SANDBOX_ENABLE_NOTES
       # Run the nginx role to install edx_notes_api config since the app role
