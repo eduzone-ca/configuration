@@ -261,7 +261,7 @@
     - install:app-requirements
 
 - name: Create the virtualenv to install the Python sandbox requirements
-  command: "virtualenv {{ edxapp_sandbox_venv_dir }} -p {{ edxapp_sandbox_python_version }}"
+  command: "virtualenv {{ edxapp_sandbox_venv_dir }} -p python2.7"
   args:
     chdir: "{{ edxapp_code_dir }}"
     creates: "{{ edxapp_sandbox_venv_dir }}/bin/pip"
