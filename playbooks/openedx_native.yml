@@ -25,7 +25,7 @@
     edx_platform_version: 'master'
 
     repo_eduzone: "eduzone-ca"
-    version_eduzone: "eduplusca-ironwood.master"
+    version_eduzone: "eduzone-juniper"
 
     CERTS_REPO: 'https://github.com/{{ repo_eduzone }}/edx-certificates.git'
     certs_version: "{{ version_eduzone }}"

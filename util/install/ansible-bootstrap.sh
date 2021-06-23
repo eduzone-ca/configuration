@@ -28,7 +28,7 @@ fi
 
 if [[ -z "${CONFIGURATION_VERSION}" ]]; then
     #####CONFIGURATION_VERSION=${OPENEDX_RELEASE-master}
-    CONFIGURATION_VERSION="eduplusca-ironwood.master"
+    CONFIGURATION_VERSION="eduzone-juniper"
 fi
 
 if [[ -z "${UPGRADE_OS}" ]]; then
