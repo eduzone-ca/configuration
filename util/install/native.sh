@@ -109,8 +109,8 @@ sudo -H pip install --upgrade virtualenv==16.7.10
 ##
 ## Modifications for eduzone
 ##
-CONFIGURATION_VERSION="eduplusca-ironwood.master"
-OPENEDX_RELEASE="eduplusca-ironwood.master"
+CONFIGURATION_VERSION="eduzone-juniper"
+OPENEDX_RELEASE="eduzone-juniper"
 
 ##
 ## Overridable version variables in the playbooks. Each can be overridden
@@ -153,8 +153,8 @@ fi
 EXTRA_VARS="-e@$(pwd)/config.yml $EXTRA_VARS"
 
 #####CONFIGURATION_VERSION=${CONFIGURATION_VERSION-$OPENEDX_RELEASE}
-CONFIGURATION_VERSION="eduplusca-ironwood.master"
-OPENEDX_RELEASE="eduplusca-ironwood.master"
+CONFIGURATION_VERSION="eduzone-juniper"
+OPENEDX_RELEASE="eduzone-juniper"
 
 ##
 ## Clone the configuration repository and run Ansible
