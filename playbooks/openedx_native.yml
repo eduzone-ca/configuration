@@ -20,34 +20,34 @@
     EDXAPP_LMS_BASE_SCHEME: http
     EDXAPP_LMS_NGINX_PORT: '80'
 
-    ##### Modifications for eduplusca 20200317
+    ##### Modifications for eduzone 20200317
     #####
     edx_platform_version: 'master'
 
-    repo_eduplusca: "eduplusca"
-    version_eduplusca: "eduplusca-ironwood.master"
+    repo_eduzone: "eduzone-ca"
+    version_eduzone: "eduplusca-ironwood.master"
 
-    CERTS_REPO: 'https://github.com/{{ repo_eduplusca }}/edx-certificates.git'
-    certs_version: "{{ version_eduplusca }}"
-    edx_ansible_source_repo: 'https://github.com/{{ repo_eduplusca }}/configuration.git'
-    configuration_version: "{{ version_eduplusca }}"
-    edx_platform_repo: 'https://github.com/{{ repo_eduplusca }}/edx-platform.git'
-    edx_platform_version: "{{ version_eduplusca }}"
-    forum_source_repo: 'https://github.com/{{ repo_eduplusca }}/cs_comments_service.git'
-    forum_version: "{{ version_eduplusca }}"
-    NOTIFIER_SOURCE_REPO: 'https://github.com/{{ repo_eduplusca }}/notifier.git'
-    NOTIFIER_VERSION: "{{ version_eduplusca }}"
-    xqueue_source_repo: 'https://github.com/{{ repo_eduplusca }}/xqueue.git'
-    XQUEUE_VERSION: "{{ version_eduplusca }}"
-    #####ECOMMERCE_VERSION: "{{ version_eduplusca }}"
-    #####ECOMMERCE_WORKER_VERSION: "{{ version_eduplusca }}"
-    DISCOVERY_VERSION: "{{ version_eduplusca }}"
-    demo_version: "{{ version_eduplusca }}"
-    #####INSIGHTS_VERSION: "{{ version_eduplusca }}"
-    #####ANALYTICS_API_VERSION: "{{ version_eduplusca }}"
-    #####THEMES_VERSION: "{{ version_eduplusca }}"
+    CERTS_REPO: 'https://github.com/{{ repo_eduzone }}/edx-certificates.git'
+    certs_version: "{{ version_eduzone }}"
+    edx_ansible_source_repo: 'https://github.com/{{ repo_eduzone }}/configuration.git'
+    configuration_version: "{{ version_eduzone }}"
+    edx_platform_repo: 'https://github.com/{{ repo_eduzone }}/edx-platform.git'
+    edx_platform_version: "{{ version_eduzone }}"
+    forum_source_repo: 'https://github.com/{{ repo_eduzone }}/cs_comments_service.git'
+    forum_version: "{{ version_eduzone }}"
+    NOTIFIER_SOURCE_REPO: 'https://github.com/{{ repo_eduzone }}/notifier.git'
+    NOTIFIER_VERSION: "{{ version_eduzone }}"
+    xqueue_source_repo: 'https://github.com/{{ repo_eduzone }}/xqueue.git'
+    XQUEUE_VERSION: "{{ version_eduzone }}"
+    #####ECOMMERCE_VERSION: "{{ version_eduzone }}"
+    #####ECOMMERCE_WORKER_VERSION: "{{ version_eduzone }}"
+    DISCOVERY_VERSION: "{{ version_eduzone }}"
+    demo_version: "{{ version_eduzone }}"
+    #####INSIGHTS_VERSION: "{{ version_eduzone }}"
+    #####ANALYTICS_API_VERSION: "{{ version_eduzone }}"
+    #####THEMES_VERSION: "{{ version_eduzone }}"
     #####
-    ##### Modifications for eduplusca 20200317
+    ##### Modifications for eduzone 20200317
 
     # Set to false if deployed behind another proxy/load balancer.
     NGINX_SET_X_FORWARDED_HEADERS: True
@@ -96,7 +96,7 @@
     - edxapp
     - role: blockstore
       when: SANDBOX_ENABLE_BLOCKSTORE
-    ##### Modifications for eduplusca 20200317
+    ##### Modifications for eduzone 20200317
     ##### not installing ecommerce, ecomworker, analytics_api
     ##### not installing insights
     #####
@@ -112,7 +112,7 @@
     #####
     ##### not installing insights
     ##### not installing ecommerce, ecomworker, analytics_api
-    ##### Modifications for eduplusca 20200317
+    ##### Modifications for eduzone 20200317
     - role: edx_notes_api
       when: SANDBOX_ENABLE_NOTES
       # Run the nginx role to install edx_notes_api config since the app role

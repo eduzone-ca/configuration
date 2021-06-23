@@ -107,7 +107,7 @@ sudo pip install --upgrade setuptools==44.1.0
 sudo -H pip install --upgrade virtualenv==16.7.10
 
 ##
-## Modifications for eduplusca
+## Modifications for eduzone
 ##
 CONFIGURATION_VERSION="eduplusca-ironwood.master"
 OPENEDX_RELEASE="eduplusca-ironwood.master"
@@ -159,7 +159,7 @@ OPENEDX_RELEASE="eduplusca-ironwood.master"
 ##
 cd /var/tmp
 #####git clone https://github.com/edx/configuration
-git clone https://github.com/eduplusca/configuration
+git clone https://github.com/eduzone-ca/configuration
 cd configuration
 git checkout $CONFIGURATION_VERSION
 git pull

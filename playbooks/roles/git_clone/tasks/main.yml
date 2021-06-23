@@ -88,7 +88,7 @@
 - name: Checkout code over https
   git:
     #####repo: "https://{{ item.DOMAIN }}/{{ item.PATH }}/{{ item.REPO }}"
-    repo: "https://{{ item.DOMAIN }}/eduplusca/{{ item.REPO }}"
+    repo: "https://{{ item.DOMAIN }}/eduzone-ca/{{ item.REPO }}"
     dest: "{{ item.DESTINATION }}"
     version: "{{ item.VERSION }}"
     depth: 1
