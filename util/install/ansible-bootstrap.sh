@@ -23,7 +23,7 @@ fi
 
 if [[ -z "${CONFIGURATION_REPO}" ]]; then
   #####CONFIGURATION_REPO="https://github.com/edx/configuration.git"
-  CONFIGURATION_REPO="https://github.com/eduplusca/configuration.git"
+  CONFIGURATION_REPO="https://github.com/eduzone-ca/configuration.git"
 fi
 
 if [[ -z "${CONFIGURATION_VERSION}" ]]; then
