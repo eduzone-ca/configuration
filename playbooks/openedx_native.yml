@@ -21,8 +21,7 @@
     EDXAPP_LMS_NGINX_PORT: '80'
 
     ##### Modifications for eduzone 20200317
-    #####
-    edx_platform_version: 'master'
+    #####edx_platform_version: 'master'
 
     repo_eduzone: "eduzone-ca"
     version_eduzone: "eduzone-juniper"
