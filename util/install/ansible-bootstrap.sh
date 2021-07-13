@@ -28,7 +28,7 @@ fi
 
 if [[ -z "${CONFIGURATION_VERSION}" ]]; then
     #####CONFIGURATION_VERSION=${OPENEDX_RELEASE-master}
-    CONFIGURATION_VERSION="eduzone-juniper"
+    CONFIGURATION_VERSION="eduzone-koa"
 fi
 
 if [[ -z "${UPGRADE_OS}" ]]; then

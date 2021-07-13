@@ -24,7 +24,7 @@
     #####edx_platform_version: 'master'
 
     repo_eduzone: "eduzone-ca"
-    version_eduzone: "eduzone-juniper"
+    version_eduzone: "eduzone-koa"
 
     CERTS_REPO: 'https://github.com/{{ repo_eduzone }}/edx-certificates.git'
     certs_version: "{{ version_eduzone }}"
@@ -53,14 +53,14 @@
     DISCOVERY_URL_ROOT: 'http://localhost:{{ DISCOVERY_NGINX_PORT }}'
     AWS_GATHER_FACTS: false
     COMMON_ENABLE_AWS_ROLE: false
-    ecommerce_create_demo_data: true
-    credentials_create_demo_data: true
+    ecommerce_create_demo_data: false
+    credentials_create_demo_data: false
     CONFIGURE_JWTS: true
     SANDBOX_ENABLE_BLOCKSTORE: false
     SANDBOX_ENABLE_DISCOVERY: true
     SANDBOX_ENABLE_ECOMMERCE: true
     SANDBOX_ENABLE_ANALYTICS_API: true
-    SANDBOX_ENABLE_INSIGHTS: true
+    SANDBOX_ENABLE_INSIGHTS: false
     SANDBOX_ENABLE_REDIS: true
     SANDBOX_ENABLE_NOTES: false
     DEMO_ROLE_ENABLED: true
